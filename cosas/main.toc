@@ -1,0 +1,34 @@
+\contentsline {section}{\numberline {1}Introducción}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Contexto y motivación}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Objetivos del trabajo}{3}{}%
+\contentsline {section}{\numberline {2}Fundamentos teóricos}{3}{}%
+\contentsline {subsection}{\numberline {2.1}Aritmética de enteros y multiplicación clásica}{3}{}%
+\contentsline {subsection}{\numberline {2.2}Transformada rápida de Fourier (FFT)}{3}{}%
+\contentsline {subsection}{\numberline {2.3}Aritmética modular}{3}{}%
+\contentsline {section}{\numberline {3}Descripción del algoritmo de Schönhage-Strassen}{3}{}%
+\contentsline {subsection}{\numberline {3.1}Explicación general del enfoque y estrategia}{3}{}%
+\contentsline {subsection}{\numberline {3.2}Descomposición en polinomios}{3}{}%
+\contentsline {subsection}{\numberline {3.3}Multiplicación de polinomios mediante FFT}{3}{}%
+\contentsline {subsection}{\numberline {3.4}Manejo de la aritmética modular}{3}{}%
+\contentsline {section}{\numberline {4}Análisis de complejidad}{3}{}%
+\contentsline {subsection}{\numberline {4.1}Complejidad asintótica del algoritmo}{3}{}%
+\contentsline {subsection}{\numberline {4.2}Comparación con la multiplicación clásica}{3}{}%
+\contentsline {subsection}{\numberline {4.3}Estudio de las constantes ocultas y su impacto práctico}{3}{}%
+\contentsline {section}{\numberline {5}Implementación y consideraciones prácticas}{3}{}%
+\contentsline {subsection}{\numberline {5.1}Detalles de implementación del algoritmo}{3}{}%
+\contentsline {subsection}{\numberline {5.2}Optimizaciones y mejoras posibles}{3}{}%
+\contentsline {subsection}{\numberline {5.3}Evaluación experimental de rendimiento}{3}{}%
+\contentsline {section}{\numberline {6}Aplicaciones y casos de uso}{3}{}%
+\contentsline {subsection}{\numberline {6.1}Escenarios en los que el algoritmo es particularmente útil}{3}{}%
+\contentsline {subsection}{\numberline {6.2}Ejemplos de aplicaciones prácticas}{3}{}%
+\contentsline {section}{\numberline {7}Avances y variantes del algoritmo}{3}{}%
+\contentsline {subsection}{\numberline {7.1}Desarrollos posteriores al algoritmo original}{3}{}%
+\contentsline {subsection}{\numberline {7.2}Variantes y mejoras propuestas por otros investigadores}{3}{}%
+\contentsline {section}{\numberline {8}Limitaciones y consideraciones adicionales}{3}{}%
+\contentsline {subsection}{\numberline {8.1}Tamaño de los números en los que el algoritmo es efectivo}{3}{}%
+\contentsline {subsection}{\numberline {8.2}Casos en los que otros enfoques pueden ser más adecuados}{3}{}%
+\contentsline {subsection}{\numberline {8.3}Desafíos y obstáculos para su implementación y uso}{3}{}%
+\contentsline {section}{\numberline {9}Conclusiones y perspectivas futuras}{3}{}%
+\contentsline {subsection}{\numberline {9.1}Resumen de los hallazgos clave}{3}{}%
+\contentsline {subsection}{\numberline {9.2}Reflexiones sobre las fortalezas y debilidades del algoritmo}{3}{}%
+\contentsline {subsection}{\numberline {9.3}Posibles direcciones para futuras investigaciones relacionadas}{3}{}%
