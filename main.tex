@@ -1,17 +1,19 @@
 \documentclass{article}
 \usepackage{lipsum}
+\usepackage[spanish]{babel} % Paquete para configurar el idioma en español
+\usepackage{titletoc} % Paquete para personalizar la generación de la tabla de contenido
+
+\setlength{\parskip}{10pt} % Ajusta el valor según tus preferencias
+
 
 \title{El teorema espectral en EDP lineales}
 \author{Lucía Mielgo}
 \date{\today}
-
-\setlength{\parskip}{12pt} % Ajusta el valor según tus preferencias
-
 \begin{document}
-
-\maketitle
-
+\maketitle % Genera la portada
 \newpage
+
+\renewcommand{\contentsname}{Índice} 
 \tableofcontents
 
 \section{Introducción}
@@ -41,6 +43,8 @@ El teorema espectral en su forma general para operadores autoadjuntos fue establ
 El teorema espectral, también conocido como teorema de diagonalización, es un resultado esencial en el álgebra lineal y el análisis funcional. Establece que ciertos operadores lineales autoadjuntos en espacios de Hilbert tienen una base ortogonal de autovectores asociados con autovalores correspondientes. En el contexto de las EDP, el teorema espectral proporciona información importante sobre las soluciones y propiedades de estas ecuaciones.
 
 El objetivo principal de este trabajo de profundización es explorar y analizar la aplicación del teorema espectral en el estudio de las ecuaciones en derivadas parciales. Se pretende investigar cómo el teorema espectral puede utilizarse para comprender mejor las propiedades de las soluciones de EDP, así como para abordar problemas de autovalores asociados a operadores lineales involucrados en las ecuaciones.
+
+\newpage
 
 \end{document}
 
