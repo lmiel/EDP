@@ -123,9 +123,9 @@ El objetivo principal de este trabajo de profundización es explorar y analizar 
             \end{equation}
     Donde $\Delta u$ es el operador de Laplace o "Laplaciano" de la función $u$.
 
-    En resumen, la ecuación del calor captura procesos de difusión y disipación, mientras que la ecuación de ondas representa la propagación de perturbaciones a través de un medio y la ecuación de Laplace representa el equilibrio o estado estacionario de un sistema. En el contexto de las EDP, el teorema espectral proporciona información importante sobre las soluciones y propiedades de estas ecuaciones.
+    Por lo tanto, la ecuación del calor captura procesos de difusión y disipación, mientras que la ecuación de ondas representa la propagación de perturbaciones a través de un medio y la ecuación de Laplace representa el equilibrio o estado estacionario de un sistema. En el contexto de las EDP, el teorema espectral proporciona información importante sobre las soluciones y propiedades de estas ecuaciones.
 
-    El análisis de las EDP lineales implica estudiar las propiedades y características de las soluciones de estas ecuaciones, como su existencia, unicidad, regularidad y comportamiento asintótico. Sus soluciones pueden variar dependiendo de las condiciones iniciales y de contorno, así como de los parámetros involucrados en la ecuación. Por lo tanto, es importante comprender cómo se comportan las soluciones en diferentes situaciones y cómo se ven afectadas por los cambios en los parámetros.
+    El análisis de las EDP lineales implica estudiar las propiedades y características de las soluciones de estas ecuaciones, las cuales pueden variar dependiendo de las condiciones iniciales y de contorno, así como de los parámetros involucrados en la ecuación.
 
     \subsection{Descripción del teorema espectral en el contexto de EDP lineales}
 
@@ -137,10 +137,18 @@ El objetivo principal de este trabajo de profundización es explorar y analizar 
     \end{equation}
     
     Donde $\lambda$ es el autovalor correspondiente al autovector $v$. El autovalor $\lambda$ es un número escalar que representa la escala por la cual el autovector es transformado al aplicar el operador $A$.
+
+    La ecuación $Av = \lambda v$ indica que al aplicar el operador $A$ al autovector $v$, obtenemos un nuevo vector que es igual al autovector $v$ escalado por el factor $\lambda$. En otras palabras, el operador $A$ actúa sobre el autovector $v$ para producir un resultado proporcional a $v$ con una constante de proporcionalidad dada por el autovalor $\lambda$.
+
+    Por lo tanto, el operador autoadjunto $A$ no es igual al autovalor $\lambda$. El operador $A$ es una transformación lineal que actúa sobre los vectores, mientras que el autovalor $\lambda$ es un número escalar que representa la escala por la cual el autovector $v$ es transformado al aplicar el operador $A$.
+
+   Esto se entiende mejor con un ejemplo: Consideremos el operador de reflexión en el plano. Supongamos que tenemos un operador $A$ que refleja un vector $v$ sobre una línea determinada. Si $v$ es un autovector de $A$, entonces la acción de $A$ sobre $v$ resulta en una dirección paralela a $v$, y el vector se escala por un factor constante $\lambda$, que en este caso sería $-1$ debido a la reflexión. 
+
+    En este ejemplo, el vector $v$ se mantiene en la misma línea o una paralela después de aplicar la reflexión, y el factor de escala $\lambda$ es igual a $-1$ para indicar la inversión de la dirección del vector.
     
     Entonces, para un operador autoadjunto, los autovectores son los vectores que se mantienen en la misma dirección o una paralela al aplicar el operador, y los autovalores son los factores de escala asociados a esos autovectores.
     
-    La descomposición espectral de un operador autoadjunto significa que podemos expresar el operador como una combinación de sus autovectores y autovalores correspondientes. Esto nos permite descomponer el operador en términos de las propiedades especiales de estos vectores y valores, lo que a su vez nos proporciona información importante sobre las características y el comportamiento del operador.. Esto se puede representar de la siguiente manera:
+    La descomposicion espectral permite descomponer el operador en términos de las propiedades especiales de estos vectores y valores. Esto se puede representar de la siguiente manera:
     
     \begin{equation}
     A = \sum_{i} \lambda_i \langle v_i, \cdot \rangle v_i
@@ -148,15 +156,9 @@ El objetivo principal de este trabajo de profundización es explorar y analizar 
     
     Donde $\lambda_i$ son los autovalores, $v_i$ son los autovectores y $\langle v_i, \cdot \rangle$ representa el producto interno entre el autovector $v_i$ y un vector del espacio.
     
-    Esta descomposición espectral nos permite entender mejor las propiedades y el comportamiento del operador $A$ y nos proporciona una forma conveniente de representar soluciones de ecuaciones en derivadas parciales lineales asociadas a este operador.
-    
-    También establece que los operadores autoadjuntos en espacios de Hilbert pueden ser diagonalizados, es decir, descompuestos en términos de sus autovectores y autovalores. Esta diagonalización permite estudiar y analizar las propiedades del operador de manera más simple y efectiva. Además, el teorema espectral muestra que estos autovectores forman una base ortogonal del espacio de Hilbert.
-
-    Aplicación en problemas de autovalores en EDP: En el contexto de las EDP, el teorema espectral es utilizado para resolver problemas de autovalores asociados a operadores lineales involucrados en las ecuaciones. Estos problemas se presentan al buscar soluciones especiales de las EDP que satisfacen una relación de proporcionalidad con respecto al operador. Los autovalores y los autovectores obtenidos a través del teorema espectral permiten describir las propiedades de estas soluciones y su comportamiento frente a las EDP.
-
-    La aplicación del teorema espectral en problemas de autovalores en EDP proporciona una herramienta poderosa para comprender y resolver estas ecuaciones, ya que permite descomponer los operadores involucrados en términos de sus autovectores y autovalores, lo que simplifica su análisis. Al obtener los autovectores y autovalores correspondientes, se pueden determinar las soluciones especiales de las EDP y estudiar su comportamiento, estabilidad y propiedades fundamentales.
-
-    La aplicación del teorema espectral en problemas de autovalores en EDP tiene diversas implicaciones. Por ejemplo, puede ayudar a clasificar las soluciones de las EDP según sus modos o frecuencias características, lo que permite comprender mejor los patrones de oscilación o propagación presentes en el sistema. Además, la diagonalización de los operadores autoadjuntos permite simplificar los cálculos y la resolución numérica de las EDP, ya que se puede trabajar con una base ortogonal de autovectores.
+    Esta descomposición espectral permite entender mejor las propiedades y el comportamiento del operador $A$ y  proporciona una forma conveniente de representar soluciones de ecuaciones en derivadas parciales lineales asociadas a este operador.
+ 
+    El teorema espectral en las EDP es útil para resolver problemas de autovalores asociados a operadores lineales presentes en las ecuaciones. Estos problemas surgen al buscar soluciones especiales de las EDP que tienen una relación proporcional con el operador. Los autovalores y autovectores obtenidos mediante el teorema espectral describen las propiedades de estas soluciones y su comportamiento frente a las EDP. Además, la diagonalización de los operadores autoadjuntos simplifica los cálculos y la resolución numérica de las EDP, al permitir trabajar con una base ortogonal de autovectores. Esto ayuda a clasificar las soluciones de las EDP según sus modos o frecuencias características, lo que facilita la comprensión de los patrones de oscilación o propagación presentes en el sistema.
 
     \subsection{Ejemplos y aplicaciones del teorema espectral en EDP lineales}
     Ejemplo de resolución de la ecuación de onda utilizando el teorema espectral:
