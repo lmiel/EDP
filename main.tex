@@ -21,10 +21,10 @@
 \section{Introducción}
 Este trabajo constituye una breve introducción al Teorema espectral aplicado a las ecuaciones en derivadas parciales lineares.
 
-Las ecuaciones en derivadas parciales (EDP) se pueden considerar modelos de evolución en la ciencia y la tecnología. Las EDP describen cómo cambia una determinada cantidad o variable a lo largo del tiempo. Esta cantidad o variable puede representar una amplia variedad de objetos y fenómenos, utilizandose para representar la propagacón de ondas, la transferencia de calor, modelar el flujo de fluidos y muchas otras aplicaciones, En pocas palabras, las EDP capturan la idea fundamental de cómo los sistemas se transforman y se desarrollan a lo largo del tiempo.
+Las ecuaciones en derivadas parciales (EDP) se pueden considerar modelos de evolución en la ciencia y la tecnología. Las EDP describen cómo cambia una determinada cantidad o variable a lo largo del tiempo. Esta cantidad o variable puede representar una amplia variedad de objetos y fenómenos, utilizandose para representar la propagación de ondas, la transferencia de calor, modelar el flujo de fluidos y muchas otras aplicaciones. En pocas palabras, las EDP capturan la idea fundamental de cómo los sistemas se transforman y se desarrollan a lo largo del tiempo.
 
 El teorema espectral en su forma general para operadores autoadjuntos fue establecido por David Hilbert en la primera década del siglo XX. Hilbert demostró que todo operador autoadjunto en un espacio de Hilbert tiene una base ortogonal de autovectores asociados a autovalores reales.
-Este teorema, es un resultado esencial en el álgebra lineal y el análisis funcional. Establece que ciertos operadores lineales autoadjuntos en espacios de Hilbert tienen una base ortogonal de autovectores asociados con autovalores correspondientes. En el contexto de las EDP, el teorema espectral proporciona información importante sobre las soluciones y propiedades de estas ecuaciones.
+Este teorema nos puede resultar muy util para el álgebra lineal y el analisis funcional. En el contexto de las EDP, el teorema espectral proporciona información importante sobre las soluciones y propiedades de estas ecuaciones.
 
 El objetivo principal de este trabajo de profundización es explorar y analizar la aplicación del teorema espectral en el estudio de las ecuaciones en derivadas parciales lineales. Investigando cómo el teorema espectral puede utilizarse para comprender mejor las propiedades de las soluciones de EDP, así como para abordar problemas de autovalores asociados a operadores lineales involucrados en las ecuaciones.
 
@@ -32,7 +32,8 @@ El objetivo principal de este trabajo de profundización es explorar y analizar 
 
 \section{Fundamentos teóricos}
     \subsection{Breve introducción a las EDP}
-    Primero, como concepto necesario a entender el teorema espectral, es necesario estar familiarizado con las ecuaciones en derivadas parciales mas importantes y que nos van a interesar a nosotros en relación al teorema espectral.
+    Primero, como concepto necesario a entender el teorema espectral, se requiere estar familiarizado con las ecuaciones en derivadas parciales más importantes y que más se utilizan en el teorema espectral.
+
     Una Ecuacion en Derivadas Parciales es una relacion de la forma:
     
     \begin{equation}
@@ -42,47 +43,58 @@ El objetivo principal de este trabajo de profundización es explorar y analizar 
         En esta ecuación, se representa una EDP de primer orden y en una dimensión, que es una de las formas más simples de una EDP. La ecuación representa una relación entre una función desconocida $u(x,t)$ y sus derivadas parciales con respecto a las variables $x$ y $t$
             
         \begin{itemize}
-            \item El término $\frac{\partial u}{\partial t}$ representa la derivada parcial de la función $u$ con respecto a la variable temporal $t$. Indica la tasa de cambio de $u$ con respecto al tiempo.
+            \item El término $\frac{\partial u}{\partial t}$ representa la derivada parcial de la función $u$ con respecto a la variable temporal $t$. Indica el cambio de $u$ con respecto al tiempo.
             
-            \item El término $c\frac{\partial u}{\partial x}$ representa la derivada parcial de la función $u$ con respecto a la variable espacial $x$, multiplicada por una constante $c$. Este término describe la tasa de cambio de $u$ con respecto a la posición en la dirección $x$ y se puede interpretar como el transporte o propagación de la función $u$ en esa dirección a una velocidad $c$.
-            
-            \item La ecuación establece que la suma de estas dos tasas de cambio es igual a cero, lo que indica que la función $u$ no cambia en el tiempo. Es decir, la variación temporal de $u$ y el transporte espacial de $u$ están balanceados, lo que implica que $u$ se conserva a lo largo del tiempo.
+            \item El término $c\frac{\partial u}{\partial x}$ representa la derivada parcial de la función $u$ con respecto a la variable espacial $x$. Describiendo el cambio de $u$ con respecto a la posición en la dirección $x$. Se puede interpretar como la propagación de la función $u$ en esa dirección.
+
         \end{itemize}
-        La ecuación establece que la suma de estas dos tasas de cambio es igual a cero, lo que indica que la función $u$ no cambia en el tiempo. Es decir, la variación temporal de $u$ y el transporte espacial de $u$ están balanceados, lo que implica que $u$ se conserva a lo largo del tiempo.
+
  
-    Nosotros vamos a trabajar con varias EDP lineales, por lo tanto, nos interesa conocer que es una ecuacion lineal.
-    
-    Una ecuación diferencial parcial lineal es aquella que es lineal en la función desconocida y en todas sus derivadas, con coeficientes que dependen solo de las variables independientes de la función. Estas ecuaciones son lineales en el sentido de que las derivadas parciales y las variables dependientes aparecen de manera lineal, sin multiplicaciones o exponenciaciones no lineales. 
+        En este trabajo se van considerar las EDP lineales de segundo orden, que son las más sencillas de resolver y las que más se utilizan en el teorema espectral. Se pueden expresarse de forma general como:
 
-    Más adelante, veremos las EDP lineales que describen la mayoria de los problemas físicos y de ingeniería, la ecuación del calor y la ecuación de ondas.
+        \begin{equation}
+        A\frac{\partial u}{\partial x\partial t}+B\frac{\partial^2 u}{\partial x^2} +C\frac{\partial^2 u}{\partial t^2} +D= 0
+        \end{equation}
+        
+        Donde $u(x,t)$ es la función desconocida dependiente de las variables $x$ y $t$, y donde A,B,C son funciones de $x$ y de $t$. D es una funcion de $x,y,u$ $\frac{\partial u}{\partial x}$ y $\frac{\partial u}{\partial t}$
+
+        Dependiendo de los valores de los coeficientes de los términos de la segunda derivada A,
+        B y C, la anterior ecuación puede clasificarse en tres categorías diferentes. Cuando B\textsuperscript{2} - 4AC $<$ 0 es una ecuación parabólica, si Si B\textsuperscript{2} - 4AC $=$ 0 es una ecuación hiperbólica y si no, B\textsuperscript{2} - 4AC $>$ 0 se considera una ecuación elíptica. También conocidas como ecuación del calor, ecuación de onda y ecuación de Laplace respectivamente. Estas dos primeras, se utilizarán mas adelante en el trabajo ya que describen la mayoría de los problemas físicos y de ingeniería de importancia práctica. Tienen la siguiente forma por orden:
+        \begin{equation}
+        \frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2}
+        \end{equation}
+        \begin{equation}
+        \frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}
+        \end{equation}
+        \begin{equation}
+            \frac{\partial^2 u}{\partial t^2} + \frac{\partial^2 u}{\partial x^2}= 0
+        \end{equation}
     \subsection{Conceptos básicos del teorema espectral y su aplicación en problemas de autovalores}
-
-    El teorema espectral proporciona una forma de descomponer estos operadores en términos de sus autovectores y autovalores asociados.
 
     A continuación, se presentan los conceptos básicos del teorema espectral y su aplicación en problemas de autovalores en el contexto de las EDP:
 
-    En el espacio Hilbert, el cual es un espacio vectorial en el que se pueden definir operaciones de suma y multiplicación por escalares. Pero lo que lo distingue del resto de espacio vectoriales es que existe un producto interno, que toma dos elementos del espacio y da lugar a una norma. Tal que:
+    El teorema espectral se aplica a el espacio Hilbert, un espacio vectorial en el que se pueden definir operaciones de suma y multiplicación por escalares. El cual se distingue del resto de espacio vectoriales porque existe un producto interno, que toma dos elementos del espacio y da lugar a una norma. Tal que:
     \begin{equation}
         |ab| = \sqrt{\langle ab, ab \rangle} = \sqrt{\langle a,a \rangle \langle b,b \rangle}
         \end{equation}
         
         Donde $a$ y $b$ son elementos de un espacio de Hilbert, $\langle \cdot, \cdot \rangle$ representa el producto interno y $| \cdot |$ es la norma.
     
+    
+    También se aplica en la resolución de problemas de autovalores, ya que nos permite determinar los autovalores y autovectores asociados a un operador lineal, quienes nos proporcionan informacion sobre las propiedades del sistema.
 
-    El teorema espectral es una herramienta fundamental en el estudio de las EDP. Establece que las soluciones de estas ecuaciones pueden expresarse como combinaciones lineales de los autovectores asociados a un operador autoadjunto. Estos autovectores, que forman una base ortogonal en el espacio de Hilbert, representan modos o frecuencias características de la ecuación. Esta descomposición espectral nos permite comprender mejor el comportamiento de las soluciones y facilita la resolución de problemas en los que buscamos encontrar una solución específica. En resumen, el teorema espectral nos permite descomponer operadores autoadjuntos en términos de sus autovectores y autovalores, lo que resulta útil para abordar problemas de autovalores en el contexto de las EDP y obtener soluciones especiales que capturan las propiedades fundamentales del sistema. Su aplicación amplía nuestra comprensión de las EDP y simplifica el análisis y la resolución de problemas en diversos campos científicos y matemáticos.
+    Y para el estudio de las EDP es una herramienta fundamental ya que establece que las soluciones de estas ecuaciones pueden expresarse como combinaciones lineales de los autovectores asociados a un operador autoadjunto. Estos autovectores representan modos o frecuencias características de la ecuación y nos permiten comprender mejor el comportamiento de las soluciones.
+    
+    En resumen, el teorema espectral nos permite descomponer operadores autoadjuntos en términos de sus autovectores y autovalores, lo que resulta útil para abordar problemas de autovalores en el contexto de las EDP y obtener soluciones especiales que capturan las propiedades del sistema.
 
 
 \newpage
 
 \section{El teorema espectral en EDP lineales}
     \subsection{Análisis de las EDP lineales y su formulación matemática}
-    Ya hemos visto anteriormente una breve introducción a las EDP, y una breve explicación de las que más nos interesan, la del calor y la de ondas, que ambas son lineales. Asi que ahora vamos a ver como se aplica el teorema espectral a estas ecuaciones. 
+    Ya hemos visto anteriormente una breve introducción a las EDP. Asi que ahora vamos a ver su formulación matemática y que representan. 
 
-
-    Las ecuaciones diferenciales de segundo orden en derivadas parciales pueden expresarse de forma general como:
-
-
-    Las ecuaciones parabólicas e hiperbólicas, como la ecuación del calor y la ecuación de ondas, respectivamente, son los modelos más clásicos y representativos en el contexto de las ecuaciones en derivadas parciales de evolución. Estas ecuaciones tienen características matemáticas muy diferentes. 
+    Las ecuaciones parabólicas, hiperbólicas y elípticas, es decir, la ecuación del calor, la ecuación de ondas y la ecuación de Laplace respectivamente, son los modelos más clásicos y representativos en el contexto de las ecuaciones en derivadas parciales de evolución. Estas ecuaciones tienen características matemáticas muy diferentes. 
 
     La ecuación del calor describe fenómenos altamente irreversibles en el tiempo, donde la información se propaga a una velocidad infinita. Se puede representar de la siguiente forma:
     \begin{equation}
@@ -98,16 +110,23 @@ El objetivo principal de este trabajo de profundización es explorar y analizar 
         
         Donde $u(x,t)$ es la función de onda que representa la perturbación en un punto $x$ en el tiempo $t$, y $c$ es la velocidad de propagación de la onda.
 
+    La ecuación de Laplace describe el equilibrio térmico o el estado estacionario en un sistema. Se puede representar de la siguiente manera:
 
+        \begin{equation}
+            \frac{\partial^2 u}{\partial t^2} + \frac{\partial^2 u}{\partial x^2}= 0
+        \end{equation}
 
-    En resumen, la ecuación del calor captura procesos de difusión y disipación, mientras que la ecuación de ondas representa la propagación de perturbaciones a través de un medio. En el contexto de las EDP, el teorema espectral proporciona información importante sobre las soluciones y propiedades de estas ecuaciones.
+    También se puede encontrar escrita como:
 
+        \begin{equation}
+            \Delta u = 0
+            \end{equation}
+    Donde $\Delta u$ es el operador de Laplace o "Laplaciano" de la función $u$.
 
+    En resumen, la ecuación del calor captura procesos de difusión y disipación, mientras que la ecuación de ondas representa la propagación de perturbaciones a través de un medio y la ecuación de Laplace representa el equilibrio o estado estacionario de un sistema. En el contexto de las EDP, el teorema espectral proporciona información importante sobre las soluciones y propiedades de estas ecuaciones.
 
-    Estas propiedades indican que la EDP exhibe una relación lineal entre la función desconocida $u(x, t)$ y sus derivadas parciales. En otras palabras, las derivadas parciales y la función desconocida aparecen de manera lineal en la ecuación, sin términos no lineales como multiplicaciones o exponenciaciones.
-    El análisis de las EDP lineales implica estudiar las propiedades y características de las soluciones de estas ecuaciones, como su existencia, unicidad, regularidad y comportamiento asintótico. También implica el estudio de métodos y técnicas para resolver estas ecuaciones y encontrar soluciones específicas.
+    El análisis de las EDP lineales implica estudiar las propiedades y características de las soluciones de estas ecuaciones, como su existencia, unicidad, regularidad y comportamiento asintótico. Sus soluciones pueden variar dependiendo de las condiciones iniciales y de contorno, así como de los parámetros involucrados en la ecuación. Por lo tanto, es importante comprender cómo se comportan las soluciones en diferentes situaciones y cómo se ven afectadas por los cambios en los parámetros.
 
-    El análisis de las EDP lineales es fundamental en diversas áreas de la ciencia y la ingeniería, como la física, la química, la biología, la economía y la ingeniería de materiales. Permite comprender y modelar fenómenos naturales y procesos físicos, y proporciona herramientas para predecir y controlar el comportamiento de sistemas complejos.
     \subsection{Descripción del teorema espectral en el contexto de EDP lineales}
 
     En el teorema espectral, se busca descomponer un operador autoadjunto en términos de sus autovectores y autovalores asociados. Un autovector es un vector no nulo que, al aplicar el operador, solo se escala por un factor constante, representado por el autovalor correspondiente.
@@ -143,25 +162,58 @@ El objetivo principal de este trabajo de profundización es explorar y analizar 
     Ejemplo de resolución de la ecuación de onda utilizando el teorema espectral:
 
     Consideremos la ecuación de onda unidimensional en un dominio acotado, dada por:
-    
-    \[
+    \begin{equation}
     \frac{{\partial^2 u}}{{\partial t^2}} = c^2 \frac{{\partial^2 u}}{{\partial x^2}}
-    \]
-    
+    \end{equation}
+
     Donde \(u(x, t)\) es la función desconocida que representa la onda en el dominio, \(c\) es la velocidad de propagación de la onda y \(x\) y \(t\) son las variables espacial y temporal, respectivamente.
     
     Para resolver esta ecuación utilizando el teorema espectral, primero debemos encontrar los autovectores y autovalores del operador diferencial \(\frac{{\partial^2}}{{\partial x^2}}\). Estos autovectores son funciones especiales que cumplen con ciertas propiedades y representan los modos normales de vibración de la onda.
     
     Supongamos que encontramos los autovectores \(\phi_n(x)\) y los autovalores \(\lambda_n\) asociados al operador diferencial. Luego, la solución de la ecuación de onda puede expresarse como una combinación lineal de estos autovectores:
     
-    \[
+    \begin{equation}
     u(x, t) = \sum_{n=1}^{\infty} A_n \phi_n(x) \cos(\omega_n t + \phi_n)
-    \]
+    \end{equation}
     
     Donde \(A_n\) son coeficientes que determinan la amplitud de cada modo normal, \(\omega_n\) es la frecuencia angular asociada al modo y \(\phi_n\) es una fase específica.
     
     La descomposición espectral nos permite entender cómo cada modo normal contribuye a la forma y evolución de la onda en el tiempo. Al determinar los coeficientes \(A_n\) y las frecuencias \(\omega_n\) correspondientes, podemos obtener la solución completa de la ecuación de onda y analizar su comportamiento dinámico. En situaciones más complejas, pueden considerarse condiciones iniciales y de contorno específicas, lo que afectaría la elección de los autovectores y los coeficientes asociados.
-    
+    Consideremos la ecuación del calor en una barra unidimensional, dada por:
+
+    \begin{equation}
+    \frac{{\partial u}}{{\partial t}} = k \frac{{\partial^2 u}}{{\partial x^2}}
+    \end{equation}
+
+    Donde \(u(x, t)\) es la temperatura en el punto \(x\) y tiempo \(t\), y \(k\) es el coeficiente de difusión térmica.
+
+    Para aplicar el teorema espectral, primero debemos encontrar los autovectores y autovalores del operador diferencial \(\frac{{\partial^2}}{{\partial x^2}}\). Estos autovectores, que son soluciones de la ecuación de autovalores, representan los modos de temperatura estacionarios de la barra.
+
+    Supongamos que encontramos los autovectores \(\phi_n(x)\) y los autovalores \(\lambda_n\) asociados al operador diferencial. Luego, la solución de la ecuación del calor puede expresarse como una combinación lineal de estos autovectores, ponderados por coeficientes \(A_n\) que determinan la contribución de cada modo:
+
+    \begin{equation}
+    u(x, t) = \sum_{n=1}^{\infty} A_n \phi_n(x) e^{-\lambda_n k t}
+    \end{equation}
+
+    Donde \(e^{-\lambda_n k t}\) es el factor de atenuación que describe la evolución temporal de cada modo.
+
+    La descomposición espectral nos permite comprender cómo cada modo de temperatura afecta la distribución de calor en la barra a lo largo del tiempo. Al determinar los coeficientes \(A_n\) correspondientes a las condiciones iniciales, podemos obtener la solución completa de la ecuación del calor y analizar cómo se propaga y se difunde el calor en el sistema.
+
+    Este ejemplo básico muestra cómo el teorema espectral se aplica en la resolución de la ecuación del calor. En casos más complejos, se pueden considerar condiciones de contorno y fuentes de calor adicionales, lo que afectaría la elección de los autovectores y los coeficientes asociados.
+
+
+    El teorema espectral también es útil para abordar problemas de autovalores asociados a operadores lineales involucrados en las ecuaciones. Estos problemas se presentan con frecuencia en el estudio de las EDP, ya que permiten determinar las propiedades fundamentales de los sistemas.
+
+    Supongamos que tenemos un operador lineal autoadjunto \(L\) que actúa en un espacio de funciones adecuado. El teorema espectral establece que este operador se puede descomponer en términos de sus autovectores y autovalores asociados.
+
+    Los autovectores del operador \(L\), denotados como \(\phi_n\), son funciones no nulas que satisfacen la ecuación \(L\phi_n = \lambda_n \phi_n\), donde \(\lambda_n\) son los autovalores correspondientes.Y como forman una base ortogonal, cualquier funcion del espacio se puede expresar como una combinación lineal de los autovestores.
+    \begin{equation}
+    f(x) = \sum_{n} c_n \phi_n(x)
+    \end{equation}
+    Donde \(c_n\) son los coeficientes de la descomposición.
+
+    Y con esta descomposicion espectral podemos entender mejor las soluciones de las EDP y utilizarla para encontrar autovalores y autovestores asociados al operador \(L\).
+
 \newpage
 
 \section{Conclusiones}
@@ -169,10 +221,11 @@ El objetivo principal de este trabajo de profundización es explorar y analizar 
 
 \section{Referencias bibliográficas}
 
+\renewcommand{\refname}{}
 \begin{thebibliography}{9}
 
     \bibitem{nice}
-    Desconocido. \emph{Partial differential equations and spectral theory, Université de Nice 2018-2019}. 2018-2019.
+    Desconocido. \emph{Partial differential equations and spectral theory, Université de Nice 2018-2019}.
     
     \bibitem{martin}
     Gómez, J. D. M. y Anguas, J. R. \emph{Ecuaciones en Derivadas Parciales y análisis funcional}.
@@ -184,9 +237,6 @@ El objetivo principal de este trabajo de profundización es explorar y analizar 
     Zuazua, E. \emph{Ecuaciones en Derivadas Parciales}.
     
     \end{thebibliography}
-    
-
-
 
 \end{document}
 
