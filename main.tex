@@ -36,7 +36,7 @@ El objetivo principal de este trabajo de profundización es explorar y analizar 
     Una Ecuacion en Derivadas Parciales es una relacion de la forma:
     
     \begin{equation}
-        \quad F\left(x, t, u, \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \ldots, \frac{\partial^2 u}{\partial x^2}, \frac{\partial^2 u}{\partial y^2}, \ldots\right) = 0
+        \quad F\left(x, t, u, \frac{\partial u}{\partial x}, \frac{\partial u}{\partial t}, \ldots, \frac{\partial^2 u}{\partial x^2}, \frac{\partial^2 u}{\partial t^2}, \ldots\right) = 0
         \end{equation}
         
         En esta ecuación, se representa una EDP de primer orden y en una dimensión, que es una de las formas más simples de una EDP. La ecuación representa una relación entre una función desconocida $u(x,t)$ y sus derivadas parciales con respecto a las variables $x$ y $t$
@@ -75,7 +75,13 @@ El objetivo principal de este trabajo de profundización es explorar y analizar 
 
     A continuación, se presentan los conceptos básicos del teorema espectral y su aplicación en problemas de autovalores en el contexto de las EDP:
 
-    En el espacio Hilbert, el cual es un espacio vectorial en el que se pueden definir operaciones de suma y multiplicación por escalares. Pero lo que lo distingue del resto de espacio vectoriales es que existe un producto interno, que toma dos elementos del espacio y da lugar a una norma. Definida:.
+    En el espacio Hilbert, el cual es un espacio vectorial en el que se pueden definir operaciones de suma y multiplicación por escalares. Pero lo que lo distingue del resto de espacio vectoriales es que existe un producto interno, que toma dos elementos del espacio y da lugar a una norma. Tal que:
+    \begin{equation}
+        |ab| = \sqrt{\langle ab, ab \rangle} = \sqrt{\langle a,a \rangle \langle b,b \rangle}
+        \end{equation}
+        
+        Donde $a$ y $b$ son elementos de un espacio de Hilbert, $\langle \cdot, \cdot \rangle$ representa el producto interno y $| \cdot |$ es la norma.
+    
 
     El teorema espectral establece que ciertos operadores lineales autoadjuntos en espacios de Hilbert tienen una base ortogonal de autovectores asociados con autovalores correspondientes.
     Es decir, las soluciones de las EDP pueden expresarse como combinaciones lineales de los autovectores asociados al operador lineal autoadjunto correspondiente. Estos autovectores forman una base ortogonal en el espacio de Hilbert y representan modos o frecuencias características de la ecuación.
