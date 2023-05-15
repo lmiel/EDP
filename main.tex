@@ -3,6 +3,7 @@
 \usepackage[spanish]{babel} % Paquete para configurar el idioma en español
 \usepackage{titletoc} % Paquete para personalizar la generación de la tabla de contenido
 \usepackage[a4paper, margin=4cm]{geometry} % Paquete para ajustar los márgenes de página
+\usepackage{parskip} % Paquete para quitar la indentación al inicio de cada párrafo
 
 \setlength{\parskip}{12pt} % Ajusta el valor según tus preferencias
 
@@ -20,20 +21,57 @@
 \section{Introducción}
 Este trabajo constituye una breve introducción al Teorema espectral aplicado a las ecuaciones en derivadas parciales lineares.
 
-Las ecuaciones en derivadas parciales (EDP) se presentan comúnmente como modelos de evolución en la ciencia y la tecnología. Estos modelos describen cómo cambia una determinada cantidad o variable a lo largo del tiempo. Esta cantidad o variable puede representar una amplia variedad de objetos y fenómenos, desde la ubicación de un satélite en el espacio hasta el comportamiento de un átomo, pasando por los índices financieros o el impacto de una enfermedad en una población. En pocas palabras, los modelos de evolución capturan la idea fundamental de cómo los sistemas se transforman y se desarrollan a lo largo del tiempo, reflejando nuestra comprensión de su dinámica.
+Las ecuaciones en derivadas parciales (EDP) se pueden considerar modelos de evolución en la ciencia y la tecnología. Las EDP describen cómo cambia una determinada cantidad o variable a lo largo del tiempo. Esta cantidad o variable puede representar una amplia variedad de objetos y fenómenos, utilizandose para representar la propagacón de ondas, la transferencia de calor, modelar el flujo de fluidos y muchas otras aplicaciones, En pocas palabras, las EDP capturan la idea fundamental de cómo los sistemas se transforman y se desarrollan a lo largo del tiempo.
 
 El teorema espectral en su forma general para operadores autoadjuntos fue establecido por David Hilbert en la primera década del siglo XX. Hilbert demostró que todo operador autoadjunto en un espacio de Hilbert tiene una base ortogonal de autovectores asociados a autovalores reales.
+Este teorema, es un resultado esencial en el álgebra lineal y el análisis funcional. Establece que ciertos operadores lineales autoadjuntos en espacios de Hilbert tienen una base ortogonal de autovectores asociados con autovalores correspondientes. En el contexto de las EDP, el teorema espectral proporciona información importante sobre las soluciones y propiedades de estas ecuaciones.
 
-El teorema espectral, también conocido como teorema de diagonalización, es un resultado esencial en el álgebra lineal y el análisis funcional. Establece que ciertos operadores lineales autoadjuntos en espacios de Hilbert tienen una base ortogonal de autovectores asociados con autovalores correspondientes. En el contexto de las EDP, el teorema espectral proporciona información importante sobre las soluciones y propiedades de estas ecuaciones.
-
-El objetivo principal de este trabajo de profundización es explorar y analizar la aplicación del teorema espectral en el estudio de las ecuaciones en derivadas parciales. Se pretende investigar cómo el teorema espectral puede utilizarse para comprender mejor las propiedades de las soluciones de EDP, así como para abordar problemas de autovalores asociados a operadores lineales involucrados en las ecuaciones.
+El objetivo principal de este trabajo de profundización es explorar y analizar la aplicación del teorema espectral en el estudio de las ecuaciones en derivadas parciales lineales. Investigando cómo el teorema espectral puede utilizarse para comprender mejor las propiedades de las soluciones de EDP, así como para abordar problemas de autovalores asociados a operadores lineales involucrados en las ecuaciones.
 
 \newpage
 
 \section{Fundamentos teóricos}
-    \subsection{Breve introducción a las EDP y su importancia de enteros y multiplicación clásica}
-    Las ecuaciones parabólicas y hiperbólicas, como la ecuación del calor y la ecuación de ondas, respectivamente, son los modelos más clásicos y representativos en el contexto de las ecuaciones en derivadas parciales de evolución. Estas ecuaciones tienen características matemáticas muy diferentes. Mientras que la ecuación del calor describe fenómenos altamente irreversibles en el tiempo, donde la información se propaga a una velocidad infinita, la ecuación de ondas es el prototipo de un modelo de propagación con velocidad finita y completamente reversible en el tiempo. En resumen, la ecuación del calor captura procesos de difusión y disipación, mientras que la ecuación de ondas representa la propagación de perturbaciones a través de un medio.
+    \subsection{Breve introducción a las EDP}
+    Primero, como concepto necesario a entender el teorema espectral, es necesario estar familiarizado con las ecuaciones en derivadas parciales mas importantes y que nos van a interesar a nosotros en relación al teorema espectral.
+    Las ecuaciones parabólicas e hiperbólicas, como la ecuación del calor y la ecuación de ondas, respectivamente, son los modelos más clásicos y representativos en el contexto de las ecuaciones en derivadas parciales de evolución. Estas ecuaciones tienen características matemáticas muy diferentes. 
+
+    La ecuación del calor describe fenómenos altamente irreversibles en el tiempo, donde la información se propaga a una velocidad infinita. Se puede representar de la siguiente forma:
+    \begin{equation}
+        \frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2}
+        \end{equation}
+    
+    Donde $u(x,t)$ es la temperatura en un punto $x$ en el tiempo $t$, y $\alpha$ es el coeficiente de difusión térmica.
+
+    Por otro lado, la ecuación de ondas es el prototipo de un modelo de propagación con velocidad finita y completamente reversible en el tiempo.
+    \begin{equation}
+        \frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}
+        \end{equation}
+        
+        Donde $u(x,t)$ es la función de onda que representa la perturbación en un punto $x$ en el tiempo $t$, y $c$ es la velocidad de propagación de la onda.
+
+    En resumen, la ecuación del calor captura procesos de difusión y disipación, mientras que la ecuación de ondas representa la propagación de perturbaciones a través de un medio. En el contexto de las EDP, el teorema espectral proporciona información importante sobre las soluciones y propiedades de estas ecuaciones.
     \subsection{Conceptos básicos del teorema espectral y su aplicación en problemas de autovalores}
+
+    El teorema espectral proporciona una forma de descomponer estos operadores en términos de sus autovectores y autovalores asociados.
+
+    A continuación, se presentan los conceptos básicos del teorema espectral y su aplicación en problemas de autovalores en el contexto de las EDP:
+
+    Espacios de Hilbert: Un espacio de Hilbert es un espacio vectorial completo con un producto interno definido. Es un espacio matemático en el que se pueden definir conceptos de norma, distancia y convergencia. Los espacios de Hilbert son utilizados para modelar las soluciones de las EDP y son esenciales para la formulación y aplicación del teorema espectral.
+
+    Operadores autoadjuntos: En el contexto del teorema espectral, se trabaja con operadores lineales autoadjuntos en espacios de Hilbert. Un operador se dice que es autoadjunto si es igual a su adjunto, es decir, si la operación de tomar el adjunto no altera el operador. Los operadores autoadjuntos tienen propiedades especiales que los hacen relevantes en el estudio de las EDP.
+
+    Autovectores y autovalores: En el teorema espectral, se busca descomponer un operador autoadjunto en términos de sus autovectores y autovalores asociados. Un autovector es un vector no nulo que, al aplicar el operador, solo se escala por un factor constante, representado por el autovalor correspondiente. Los autovectores y autovalores son fundamentales para entender las propiedades y el comportamiento de los operadores lineales.
+
+    Diagonalización y espectralidad: El teorema espectral establece que los operadores autoadjuntos en espacios de Hilbert pueden ser diagonalizados, es decir, descompuestos en términos de sus autovectores y autovalores. Esta diagonalización permite estudiar y analizar las propiedades del operador de manera más simple y efectiva. Además, el teorema espectral muestra que estos autovectores forman una base ortogonal del espacio de Hilbert.
+
+    Aplicación en problemas de autovalores en EDP: En el contexto de las EDP, el teorema espectral es utilizado para resolver problemas de autovalores asociados a operadores lineales involucrados en las ecuaciones. Estos problemas se presentan al buscar soluciones especiales de las EDP que satisfacen una relación de proporcionalidad con respecto al operador. Los autovalores y los autovectores obtenidos a través del teorema espectral permiten describir las propiedades de estas soluciones y su comportamiento frente a las EDP.
+
+    La aplicación del teorema espectral en problemas de autovalores en EDP proporciona una herramienta poderosa para comprender y resolver estas ecuaciones, ya que permite descomponer los operadores involucrados en términos de sus autovectores y autovalores, lo que simplifica su análisis. Al obtener los autovectores y autovalores correspondientes, se pueden determinar las soluciones especiales de las EDP y estudiar su comportamiento, estabilidad y propiedades fundamentales.
+
+    La aplicación del teorema espectral en problemas de autovalores en EDP tiene diversas implicaciones. Por ejemplo, puede ayudar a clasificar las soluciones de las EDP según sus modos o frecuencias características, lo que permite comprender mejor los patrones de oscilación o propagación presentes en el sistema. Además, la diagonalización de los operadores autoadjuntos permite simplificar los cálculos y la resolución numérica de las EDP, ya que se puede trabajar con una base ortogonal de autovectores.
+
+    En resumen, el teorema espectral es una herramienta fundamental en el estudio de las EDP, ya que proporciona una forma de descomponer operadores autoadjuntos en términos de sus autovectores y autovalores. Esto permite abordar problemas de autovalores en el contexto de las EDP y obtener soluciones especiales que capturan las propiedades fundamentales del sistema. La aplicación del teorema espectral en las EDP amplía nuestra comprensión de estas ecuaciones y facilita el análisis y la resolución de problemas en diversos campos científicos y matemáticos.
+
 
 \newpage
 
