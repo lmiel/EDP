@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1684106466 "c:/Users/lucia/Documents/Programacion/EDP/main.tex" "main.pdf" "main" 1684106466 0
+["pdflatex"] 1684145911 "c:/Users/lucia/Documents/Programacion/EDP/main.tex" "main.pdf" "main" 1684145912 0
   "C:/Users/lucia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1684103100 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/lucia/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1670722529 10805037 2305678073c3b450f4e921c9a4445050 ""
   "C:/Users/lucia/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -44,10 +44,10 @@
   "C:/Users/lucia/AppData/Local/Programs/MiKTeX/tex/latex/lipsum/lipsum.sty" 1633253722 14690 c2c754218a7108db7823a4839c1bc3cd ""
   "C:/Users/lucia/AppData/Local/Programs/MiKTeX/tex/latex/parskip/parskip.sty" 1615979760 4288 94714aa7f535440f33181fec52a31963 ""
   "C:/Users/lucia/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titletoc.sty" 1625497667 16869 7ce4779f4c701438f50d52c5972cef02 ""
-  "c:/Users/lucia/Documents/Programacion/EDP/main.tex" 1684106465 8989 4dc65d9954667d3bec478c8af2fb8c28 ""
-  "main.aux" 1684106466 1522 15d194c88a375342fe89f15bc62726a5 "pdflatex"
-  "main.tex" 1684106465 8989 4dc65d9954667d3bec478c8af2fb8c28 ""
-  "main.toc" 1684106466 950 bd6d8fd27c126991b267490f0e327ea0 "pdflatex"
+  "c:/Users/lucia/Documents/Programacion/EDP/main.tex" 1684145910 9434 f3a3503f3149ed7acc0a71d68c477bd8 ""
+  "main.aux" 1684145912 1522 60a1c425c65a3011ebf01b59af222f5c "pdflatex"
+  "main.tex" 1684145910 9434 f3a3503f3149ed7acc0a71d68c477bd8 ""
+  "main.toc" 1684145912 950 8c6c1e4b27ce30547ee85196521e962c "pdflatex"
   (generated)
   "main.aux"
   "main.log"
