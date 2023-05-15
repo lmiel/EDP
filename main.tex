@@ -50,6 +50,40 @@ El objetivo principal de este trabajo de profundización es explorar y analizar 
         \end{itemize}
         La ecuación establece que la suma de estas dos tasas de cambio es igual a cero, lo que indica que la función $u$ no cambia en el tiempo. Es decir, la variación temporal de $u$ y el transporte espacial de $u$ están balanceados, lo que implica que $u$ se conserva a lo largo del tiempo.
  
+    Nosotros vamos a trabajar con varias EDP lineales, por lo tanto, nos interesa conocer que es una ecuacion lineal.
+    
+    Una ecuación diferencial parcial lineal es aquella que es lineal en la función desconocida y en todas sus derivadas, con coeficientes que dependen solo de las variables independientes de la función. Estas ecuaciones son lineales en el sentido de que las derivadas parciales y las variables dependientes aparecen de manera lineal, sin multiplicaciones o exponenciaciones no lineales. 
+
+    Más adelante, veremos las EDP lineales que describen la mayoria de los problemas físicos y de ingeniería, la ecuación del calor y la ecuación de ondas.
+    \subsection{Conceptos básicos del teorema espectral y su aplicación en problemas de autovalores}
+
+    El teorema espectral proporciona una forma de descomponer estos operadores en términos de sus autovectores y autovalores asociados.
+
+    A continuación, se presentan los conceptos básicos del teorema espectral y su aplicación en problemas de autovalores en el contexto de las EDP:
+
+    En el espacio Hilbert, el cual es un espacio vectorial en el que se pueden definir operaciones de suma y multiplicación por escalares. Pero lo que lo distingue del resto de espacio vectoriales es que existe un producto interno, que toma dos elementos del espacio y da lugar a una norma. Tal que:
+    \begin{equation}
+        |ab| = \sqrt{\langle ab, ab \rangle} = \sqrt{\langle a,a \rangle \langle b,b \rangle}
+        \end{equation}
+        
+        Donde $a$ y $b$ son elementos de un espacio de Hilbert, $\langle \cdot, \cdot \rangle$ representa el producto interno y $| \cdot |$ es la norma.
+    
+
+    El teorema espectral establece que las soluciones de las EDP pueden expresarse como combinaciones lineales de los autovectores, que están asociados a un operador matemático especial llamado operador autoadjunto. Estos autovectores forman una base ortogonal en el espacio de Hilbert y representan modos o frecuencias características de la ecuación. Es muy útil porque nos permite entender mejor cómo se comportan las soluciones de una EDP y nos facilita la resolución de problemas en los que necesitamos encontrar una solución específica.
+
+    En resumen, el teorema espectral es una herramienta fundamental en el estudio de las EDP, ya que proporciona una forma de descomponer operadores autoadjuntos en términos de sus autovectores y autovalores. Esto permite abordar problemas de autovalores en el contexto de las EDP y obtener soluciones especiales que capturan las propiedades fundamentales del sistema. La aplicación del teorema espectral en las EDP amplía nuestra comprensión de estas ecuaciones y facilita el análisis y la resolución de problemas en diversos campos científicos y matemáticos.
+
+
+\newpage
+
+\section{El teorema espectral en EDP lineales}
+    \subsection{Análisis de las EDP lineales y su formulación matemática}
+    Ya hemos visto anteriormente una breve introducción a las EDP, y una breve explicación de las que más nos interesan, la del calor y la de ondas, que ambas son lineales. Asi que ahora vamos a ver como se aplica el teorema espectral a estas ecuaciones. 
+
+
+    Las ecuaciones diferenciales de segundo orden en derivadas parciales pueden expresarse de forma general como:
+
+
     Las ecuaciones parabólicas e hiperbólicas, como la ecuación del calor y la ecuación de ondas, respectivamente, son los modelos más clásicos y representativos en el contexto de las ecuaciones en derivadas parciales de evolución. Estas ecuaciones tienen características matemáticas muy diferentes. 
 
     La ecuación del calor describe fenómenos altamente irreversibles en el tiempo, donde la información se propaga a una velocidad infinita. Se puede representar de la siguiente forma:
@@ -69,28 +103,36 @@ El objetivo principal de este trabajo de profundización es explorar y analizar 
 
 
     En resumen, la ecuación del calor captura procesos de difusión y disipación, mientras que la ecuación de ondas representa la propagación de perturbaciones a través de un medio. En el contexto de las EDP, el teorema espectral proporciona información importante sobre las soluciones y propiedades de estas ecuaciones.
-    \subsection{Conceptos básicos del teorema espectral y su aplicación en problemas de autovalores}
 
-    El teorema espectral proporciona una forma de descomponer estos operadores en términos de sus autovectores y autovalores asociados.
 
-    A continuación, se presentan los conceptos básicos del teorema espectral y su aplicación en problemas de autovalores en el contexto de las EDP:
 
-    En el espacio Hilbert, el cual es un espacio vectorial en el que se pueden definir operaciones de suma y multiplicación por escalares. Pero lo que lo distingue del resto de espacio vectoriales es que existe un producto interno, que toma dos elementos del espacio y da lugar a una norma. Tal que:
+    Estas propiedades indican que la EDP exhibe una relación lineal entre la función desconocida $u(x, t)$ y sus derivadas parciales. En otras palabras, las derivadas parciales y la función desconocida aparecen de manera lineal en la ecuación, sin términos no lineales como multiplicaciones o exponenciaciones.
+    El análisis de las EDP lineales implica estudiar las propiedades y características de las soluciones de estas ecuaciones, como su existencia, unicidad, regularidad y comportamiento asintótico. También implica el estudio de métodos y técnicas para resolver estas ecuaciones y encontrar soluciones específicas.
+
+    El análisis de las EDP lineales es fundamental en diversas áreas de la ciencia y la ingeniería, como la física, la química, la biología, la economía y la ingeniería de materiales. Permite comprender y modelar fenómenos naturales y procesos físicos, y proporciona herramientas para predecir y controlar el comportamiento de sistemas complejos.
+    \subsection{Descripción del teorema espectral en el contexto de EDP lineales}
+    En el teorema espectral, se busca descomponer un operador autoadjunto en términos de sus autovectores y autovalores asociados. Un autovector es un vector no nulo que, al aplicar el operador, solo se escala por un factor constante, representado por el autovalor correspondiente. Los autovectores y autovalores son fundamentales para entender las propiedades y el comportamiento de los operadores lineales.
+    Sea $A$ un operador lineal y autoadjunto en un espacio de Hilbert $\mathcal{H}$. Un autovector $v$ de $A$ es un vector no nulo tal que:
+
     \begin{equation}
-        |ab| = \sqrt{\langle ab, ab \rangle} = \sqrt{\langle a,a \rangle \langle b,b \rangle}
-        \end{equation}
-        
-        Donde $a$ y $b$ son elementos de un espacio de Hilbert, $\langle \cdot, \cdot \rangle$ representa el producto interno y $| \cdot |$ es la norma.
+    Av = \lambda v
+    \end{equation}
     
-
-    El teorema espectral establece que ciertos operadores lineales autoadjuntos en espacios de Hilbert tienen una base ortogonal de autovectores asociados con autovalores correspondientes.
-    Es decir, las soluciones de las EDP pueden expresarse como combinaciones lineales de los autovectores asociados al operador lineal autoadjunto correspondiente. Estos autovectores forman una base ortogonal en el espacio de Hilbert y representan modos o frecuencias características de la ecuación.
-        
-    Operadores autoadjuntos: En el contexto del teorema espectral, se trabaja con operadores lineales autoadjuntos en espacios de Hilbert. Un operador se dice que es autoadjunto si es igual a su adjunto, es decir, si la operación de tomar el adjunto no altera el operador. Los operadores autoadjuntos tienen propiedades especiales que los hacen relevantes en el estudio de las EDP.
-
-    Autovectores y autovalores: En el teorema espectral, se busca descomponer un operador autoadjunto en términos de sus autovectores y autovalores asociados. Un autovector es un vector no nulo que, al aplicar el operador, solo se escala por un factor constante, representado por el autovalor correspondiente. Los autovectores y autovalores son fundamentales para entender las propiedades y el comportamiento de los operadores lineales.
-
-    Diagonalización y espectralidad: El teorema espectral establece que los operadores autoadjuntos en espacios de Hilbert pueden ser diagonalizados, es decir, descompuestos en términos de sus autovectores y autovalores. Esta diagonalización permite estudiar y analizar las propiedades del operador de manera más simple y efectiva. Además, el teorema espectral muestra que estos autovectores forman una base ortogonal del espacio de Hilbert.
+    donde $\lambda$ es el autovalor correspondiente al autovector $v$. El autovalor $\lambda$ es un número escalar que representa la escala por la cual el autovector es transformado al aplicar el operador $A$.
+    
+    En resumen, para un operador autoadjunto, los autovectores son los vectores que se mantienen en la misma dirección (o en una dirección paralela) al aplicar el operador, y los autovalores son los factores de escala asociados a esos autovectores.
+    
+    La descomposición espectral de un operador autoadjunto consiste en expresar el operador en términos de sus autovectores y autovalores asociados. Esto se puede representar de la siguiente manera:
+    
+    \begin{equation}
+    A = \sum_{i} \lambda_i \langle v_i, \cdot \rangle v_i
+    \end{equation}
+    
+    donde $\lambda_i$ son los autovalores, $v_i$ son los autovectores y $\langle v_i, \cdot \rangle$ representa el producto interno entre el autovector $v_i$ y un vector del espacio.
+    
+    Esta descomposición espectral nos permite entender mejor las propiedades y el comportamiento del operador $A$ y nos proporciona una forma conveniente de representar soluciones de ecuaciones en derivadas parciales lineales asociadas a este operador.
+    
+    También establece que los operadores autoadjuntos en espacios de Hilbert pueden ser diagonalizados, es decir, descompuestos en términos de sus autovectores y autovalores. Esta diagonalización permite estudiar y analizar las propiedades del operador de manera más simple y efectiva. Además, el teorema espectral muestra que estos autovectores forman una base ortogonal del espacio de Hilbert.
 
     Aplicación en problemas de autovalores en EDP: En el contexto de las EDP, el teorema espectral es utilizado para resolver problemas de autovalores asociados a operadores lineales involucrados en las ecuaciones. Estos problemas se presentan al buscar soluciones especiales de las EDP que satisfacen una relación de proporcionalidad con respecto al operador. Los autovalores y los autovectores obtenidos a través del teorema espectral permiten describir las propiedades de estas soluciones y su comportamiento frente a las EDP.
 
@@ -98,14 +140,6 @@ El objetivo principal de este trabajo de profundización es explorar y analizar 
 
     La aplicación del teorema espectral en problemas de autovalores en EDP tiene diversas implicaciones. Por ejemplo, puede ayudar a clasificar las soluciones de las EDP según sus modos o frecuencias características, lo que permite comprender mejor los patrones de oscilación o propagación presentes en el sistema. Además, la diagonalización de los operadores autoadjuntos permite simplificar los cálculos y la resolución numérica de las EDP, ya que se puede trabajar con una base ortogonal de autovectores.
 
-    En resumen, el teorema espectral es una herramienta fundamental en el estudio de las EDP, ya que proporciona una forma de descomponer operadores autoadjuntos en términos de sus autovectores y autovalores. Esto permite abordar problemas de autovalores en el contexto de las EDP y obtener soluciones especiales que capturan las propiedades fundamentales del sistema. La aplicación del teorema espectral en las EDP amplía nuestra comprensión de estas ecuaciones y facilita el análisis y la resolución de problemas en diversos campos científicos y matemáticos.
-
-
-\newpage
-
-\section{El teorema espectral en EDP lineales}
-    \subsection{Análisis de las EDP lineales y su formulación matemática}
-    \subsection{Descripción del teorema espectral en el contexto de EDP lineales}
     \subsection{Ejemplos y aplicaciones del teorema espectral en EDP lineales}
 
 \newpage
@@ -115,7 +149,6 @@ El objetivo principal de este trabajo de profundización es explorar y analizar 
 
 \section{Referencias bibliográficas}
 
-\newpage
 
 
 
