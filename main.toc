@@ -2,11 +2,11 @@
 \contentsline {section}{\numberline {1}Introducción}{3}{}%
 \contentsline {section}{\numberline {2}Fundamentos teóricos}{4}{}%
 \contentsline {subsection}{\numberline {2.1}Breve introducción a las EDP}{4}{}%
-\contentsline {subsection}{\numberline {2.2}Conceptos básicos del teorema espectral y su aplicación en problemas de autovalores}{4}{}%
-\contentsline {section}{\numberline {3}El teorema espectral en EDP lineales}{6}{}%
-\contentsline {subsection}{\numberline {3.1}Análisis de las EDP lineales y su formulación matemática}{6}{}%
-\contentsline {subsection}{\numberline {3.2}Descripción del teorema espectral en el contexto de EDP lineales}{6}{}%
-\contentsline {subsection}{\numberline {3.3}Ejemplos y aplicaciones del teorema espectral en EDP lineales}{6}{}%
-\contentsline {section}{\numberline {4}Conclusiones}{7}{}%
-\contentsline {section}{\numberline {5}Referencias bibliográficas}{8}{}%
+\contentsline {subsection}{\numberline {2.2}Conceptos básicos del teorema espectral y su aplicación en problemas de autovalores}{5}{}%
+\contentsline {section}{\numberline {3}El teorema espectral en EDP lineales}{7}{}%
+\contentsline {subsection}{\numberline {3.1}Análisis de las EDP lineales y su formulación matemática}{7}{}%
+\contentsline {subsection}{\numberline {3.2}Descripción del teorema espectral en el contexto de EDP lineales}{7}{}%
+\contentsline {subsection}{\numberline {3.3}Ejemplos y aplicaciones del teorema espectral en EDP lineales}{7}{}%
+\contentsline {section}{\numberline {4}Conclusiones}{8}{}%
+\contentsline {section}{\numberline {5}Referencias bibliográficas}{9}{}%
 \contentsfinish 

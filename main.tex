@@ -33,6 +33,23 @@ El objetivo principal de este trabajo de profundización es explorar y analizar 
 \section{Fundamentos teóricos}
     \subsection{Breve introducción a las EDP}
     Primero, como concepto necesario a entender el teorema espectral, es necesario estar familiarizado con las ecuaciones en derivadas parciales mas importantes y que nos van a interesar a nosotros en relación al teorema espectral.
+    Una Ecuacion en Derivadas Parciales es una relacion de la forma:
+    
+    \begin{equation}
+        \quad F\left(x, t, u, \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \ldots, \frac{\partial^2 u}{\partial x^2}, \frac{\partial^2 u}{\partial y^2}, \ldots\right) = 0
+        \end{equation}
+        
+        En esta ecuación, se representa una EDP de primer orden y en una dimensión, que es una de las formas más simples de una EDP. La ecuación representa una relación entre una función desconocida $u(x,t)$ y sus derivadas parciales con respecto a las variables $x$ y $t$
+            
+        \begin{itemize}
+            \item El término $\frac{\partial u}{\partial t}$ representa la derivada parcial de la función $u$ con respecto a la variable temporal $t$. Indica la tasa de cambio de $u$ con respecto al tiempo.
+            
+            \item El término $c\frac{\partial u}{\partial x}$ representa la derivada parcial de la función $u$ con respecto a la variable espacial $x$, multiplicada por una constante $c$. Este término describe la tasa de cambio de $u$ con respecto a la posición en la dirección $x$ y se puede interpretar como el transporte o propagación de la función $u$ en esa dirección a una velocidad $c$.
+            
+            \item La ecuación establece que la suma de estas dos tasas de cambio es igual a cero, lo que indica que la función $u$ no cambia en el tiempo. Es decir, la variación temporal de $u$ y el transporte espacial de $u$ están balanceados, lo que implica que $u$ se conserva a lo largo del tiempo.
+        \end{itemize}
+        La ecuación establece que la suma de estas dos tasas de cambio es igual a cero, lo que indica que la función $u$ no cambia en el tiempo. Es decir, la variación temporal de $u$ y el transporte espacial de $u$ están balanceados, lo que implica que $u$ se conserva a lo largo del tiempo.
+ 
     Las ecuaciones parabólicas e hiperbólicas, como la ecuación del calor y la ecuación de ondas, respectivamente, son los modelos más clásicos y representativos en el contexto de las ecuaciones en derivadas parciales de evolución. Estas ecuaciones tienen características matemáticas muy diferentes. 
 
     La ecuación del calor describe fenómenos altamente irreversibles en el tiempo, donde la información se propaga a una velocidad infinita. Se puede representar de la siguiente forma:
@@ -48,6 +65,8 @@ El objetivo principal de este trabajo de profundización es explorar y analizar 
         \end{equation}
         
         Donde $u(x,t)$ es la función de onda que representa la perturbación en un punto $x$ en el tiempo $t$, y $c$ es la velocidad de propagación de la onda.
+
+
 
     En resumen, la ecuación del calor captura procesos de difusión y disipación, mientras que la ecuación de ondas representa la propagación de perturbaciones a través de un medio. En el contexto de las EDP, el teorema espectral proporciona información importante sobre las soluciones y propiedades de estas ecuaciones.
     \subsection{Conceptos básicos del teorema espectral y su aplicación en problemas de autovalores}
