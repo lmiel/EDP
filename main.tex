@@ -161,64 +161,86 @@ El objetivo principal de este trabajo de profundización es explorar y analizar 
    El teorema espectral en las EDP resuelve problemas de autovalores asociados a operadores lineales en las ecuaciones. Permite obtener soluciones especiales proporcionales al operador, representadas por autovalores y autovectores. La diagonalización de operadores autoadjuntos simplifica cálculos y resolución numérica, al trabajar con una base ortogonal de autovectores. Clasifica soluciones según modos o frecuencias, facilitando la comprensión de patrones de oscilación o propagación en el sistema.
 
     \subsection{Ejemplos y aplicaciones del teorema espectral en EDP lineales}
-    Ejemplo de resolución de la ecuación de onda utilizando el teorema espectral:
 
-    Consideremos la ecuación de onda unidimensional en un dominio acotado, dada por:
+    Un ejemplo concreto de cómo el teorema espectral puede ayudarnos a comprender mejor las soluciones de las EDP es el caso de la ecuación de onda unidimensional. Queriendo resolver la ecuación de onda:
+
     \begin{equation}
     \frac{{\partial^2 u}}{{\partial t^2}} = c^2 \frac{{\partial^2 u}}{{\partial x^2}}
     \end{equation}
 
-    Donde \(u(x, t)\) es la función desconocida que representa la onda en el dominio, \(c\) es la velocidad de propagación de la onda y \(x\) y \(t\) son las variables espacial y temporal, respectivamente.
-    
-    Para resolver esta ecuación utilizando el teorema espectral, primero debemos encontrar los autovectores y autovalores del operador diferencial \(\frac{{\partial^2}}{{\partial x^2}}\). Estos autovectores son funciones especiales que cumplen con ciertas propiedades y representan los modos normales de vibración de la onda.
-    
-    Supongamos que encontramos los autovectores \(\phi_n(x)\) y los autovalores \(\lambda_n\) asociados al operador diferencial. Luego, la solución de la ecuación de onda puede expresarse como una combinación lineal de estos autovectores:
+    El objetivo es encontrar una solucion $u(x,t)$ que satisfaga esta ecuación.
+    Para resolver esta ecuación de ondas utilizando el teorema espectral, primero se aplica el teorema al operador \frac{{\partial^2 }}{{\partial x^2}}.
+    Según las propiedades del teorema podemos descomponer el operador en sus autovectores ($\mathbf{v}_n(x)$) y autovalores asociados($\(\lambda_n\)$). Representando las formas propias de la onda y las frecuencias de oscilación respectivamente. La descomposición del operador en su forma espectral es:
+
+    Suponiendo que se encuentran los autovectores $\mathbf{v}_n(x)$ y los autovalores \(\lambda_n\) asociados al operador diferencial. Entonces, la solución de la ecuación de onda puede expresarse:
     
     \begin{equation}
-    u(x, t) = \sum_{n=1}^{\infty} A_n \phi_n(x) \cos(\omega_n t + \phi_n)
+        \frac{{\partial^2 }}{{\partial x^2}} = \sum_{n}^{\infty} \lambda_n \mathbf{v}_n(x)
+        \end{equation}
+    
+    Como cualquier función del espacio se puede expresar como una combinación lineal de los autovectores:
+
+    \begin{equation}
+        u(x, t) = \sum_{n}^{\infty} c_n \mathbf{v}_n(x)
+    \end{equation} 
+    
+    Donde \(c_n\) son los coeficientes de la descomposición
+    
+    Sustituyendo la expresión de la solución en la ecuación de onda, obtenemos:
+
+    \begin{equation}
+        \frac{{\partial^2}}{{\partial t^2}}{\sum_{n}^{\infty} c_n(t) \mathbf{v}_n(x)} = c^2\frac{{\partial^2}}{{\partial x^2}}{\sum_{n}^{\infty} c_n(t) \mathbf{v}_n(x)}
     \end{equation}
     
-    Donde \(A_n\) son coeficientes que determinan la amplitud de cada modo normal, \(\omega_n\) es la frecuencia angular asociada al modo y \(\phi_n\) es una fase específica.
+    Dado que las derivadas parciales con respecto a $x$ y $t$ son lineales, se intercambia el orden de las derivadas y la suma:
+
+    \begin{equation}
+        {\sum_{n}^{\infty} \frac{{\partial^2}}{{\partial t^2}}(c_n(t) \mathbf{v}_n(x))} = c^2\frac{{\partial^2}}{{\partial x^2}}{\sum_{n}^{\infty}\frac{{\partial^2}}{{\partial x^2}}(c_n(t) \mathbf{v}_n(x))}
+    \end{equation}
     
-    La descomposición espectral nos permite entender cómo cada modo normal contribuye a la forma y evolución de la onda en el tiempo. Al determinar los coeficientes \(A_n\) y las frecuencias \(\omega_n\) correspondientes, podemos obtener la solución completa de la ecuación de onda y analizar su comportamiento dinámico. En situaciones más complejas, pueden considerarse condiciones iniciales y de contorno específicas, lo que afectaría la elección de los autovectores y los coeficientes asociados.
-    Consideremos la ecuación del calor en una barra unidimensional, dada por:
+    Como los autovectores forman una base ortogonal, se puede considerar cada término de la suma por separado. Entonces, para cada $n$ se obtiene la ecuación diferencial ordinaria:
 
     \begin{equation}
-    \frac{{\partial u}}{{\partial t}} = k \frac{{\partial^2 u}}{{\partial x^2}}
+        \frac{{\partial^2 c_n}}{{\partial t^2}} = c^2\lambda_n \mathbf c_n
     \end{equation}
 
-    Donde \(u(x, t)\) es la temperatura en el punto \(x\) y tiempo \(t\), y \(k\) es el coeficiente de difusión térmica.
+    La solucion general de esta ecuación depende del autovalor asociado $\lambda_n$.
 
-    Para aplicar el teorema espectral, primero debemos encontrar los autovectores y autovalores del operador diferencial \(\frac{{\partial^2}}{{\partial x^2}}\). Estos autovectores, que son soluciones de la ecuación de autovalores, representan los modos de temperatura estacionarios de la barra.
+    A continuación, se resuelve las ecuaciones obtenidas en el paso 4 para cada n, y las condiciones iniciales, obetiendo soluiones particulares para los coeficientes $c_n(t)$
 
-    Supongamos que encontramos los autovectores \(\phi_n(x)\) y los autovalores \(\lambda_n\) asociados al operador diferencial. Luego, la solución de la ecuación del calor puede expresarse como una combinación lineal de estos autovectores, ponderados por coeficientes \(A_n\) que determinan la contribución de cada modo:
+    Y finalmente se saca la solución de la ecuación de onda con la siguiente expresión:
 
     \begin{equation}
-    u(x, t) = \sum_{n=1}^{\infty} A_n \phi_n(x) e^{-\lambda_n k t}
+        u(x, t) = \sum_{n}^{\infty} c_n \mathbf{v}_n(x)
     \end{equation}
 
-    Donde \(e^{-\lambda_n k t}\) es el factor de atenuación que describe la evolución temporal de cada modo.
+    Sustituyendo las soluciones particulares obtenidas en el paso 5, se obtiene la solución general de la ecuación de onda.
 
-    La descomposición espectral nos permite comprender cómo cada modo de temperatura afecta la distribución de calor en la barra a lo largo del tiempo. Al determinar los coeficientes \(A_n\) correspondientes a las condiciones iniciales, podemos obtener la solución completa de la ecuación del calor y analizar cómo se propaga y se difunde el calor en el sistema.
+    Una forma general de la solución de la ecuación de onda para un problema con condiciones iniciales y de contorno adecuadas es una superposición de modos normales, donde cada modo está representado por un autovector $\mathbf{v}_n(x)$ y tiene una frecuencia angular asociada $\omega_n$. La amplitud del modo se denota por $A_n$ y puede depender del modo espacial y de las condiciones iniciales.
 
-    Este ejemplo básico muestra cómo el teorema espectral se aplica en la resolución de la ecuación del calor. En casos más complejos, se pueden considerar condiciones de contorno y fuentes de calor adicionales, lo que afectaría la elección de los autovectores y los coeficientes asociados.
+    La forma específica de la función temporal depende de las condiciones iniciales y de contorno del problema. En algunos casos, puede ser una función senoidal, cosenoidal o una combinación de ambas. La fase $\phi_n$ representa la fase inicial del modo $n$.
 
+    Por lo tanto, una posible forma de la solución de la ecuación de onda en un escenario particular donde se asume una superposición de modos normales con una función temporal cosenoidal se representa así: 
+    \begin{equation} 
+        u(x, t) = \sum_{n=1}^{\infty} A_n \mathbf{v}_n(x) \cos(\omega_n t + \phi_n) 
+    \end{equation} es una posible forma de la solución de la 
+    
+    Esta forma general proporciona una representación útil para comprender cómo los diferentes modos espaciales y temporales contribuyen a la solución completa. La razón por la cual se puede expresar de esta manera es debido al comportamiento armónico de las funciones propias (vn(x)vn(x)) y a la linealidad de la ecuación de onda.
 
-    El teorema espectral también es útil para abordar problemas de autovalores asociados a operadores lineales involucrados en las ecuaciones. Estos problemas se presentan con frecuencia en el estudio de las EDP, ya que permiten determinar las propiedades fundamentales de los sistemas.
-
-    Supongamos que tenemos un operador lineal autoadjunto \(L\) que actúa en un espacio de funciones adecuado. El teorema espectral establece que este operador se puede descomponer en términos de sus autovectores y autovalores asociados.
-
-    Los autovectores del operador \(L\), denotados como \(\phi_n\), son funciones no nulas que satisfacen la ecuación \(L\phi_n = \lambda_n \phi_n\), donde \(\lambda_n\) son los autovalores correspondientes.Y como forman una base ortogonal, cualquier funcion del espacio se puede expresar como una combinación lineal de los autovestores.
-    \begin{equation}
-    f(x) = \sum_{n} c_n \phi_n(x)
-    \end{equation}
-    Donde \(c_n\) son los coeficientes de la descomposición.
-
-    Y con esta descomposicion espectral podemos entender mejor las soluciones de las EDP y utilizarla para encontrar autovalores y autovestores asociados al operador \(L\).
+    El teorema espectral también es útil para resolver problemas de autovalores asociados a operadores lineales involucrados en las ecuaciones.
 
 \newpage
 
 \section{Conclusiones}
+
+En este trabajo se ha explorado el teorema espectral aplicado a las ecuaciones en derivadas parciales lineales. El teorema espectral, establecido por David Hilbert, afirma que todo operador autoadjunto en un espacio de Hilbert tiene una base ortogonal de autovectores asociados a autovalores reales.
+
+Se ha mostrado cómo las ecuaciones en derivadas parciales lineales, como la ecuación del calor, la ecuación de ondas y la ecuación de Laplace, pueden ser modeladas y analizadas utilizando el teorema espectral. Las soluciones de estas ecuaciones pueden expresarse como combinaciones lineales de los autovectores asociados a un operador autoadjunto, lo que nos permite comprender mejor las propiedades de las soluciones y abordar problemas de autovalores.
+
+En resumen, el teorema espectral en el contexto de las ecuaciones en derivadas parciales lineales nos brinda una herramienta poderosa para estudiar y analizar estas ecuaciones, permitiéndonos descomponer operadores autoadjuntos en términos de sus autovectores y autovalores. Esto proporciona información importante sobre las propiedades de las soluciones y nos ayuda a comprender mejor el comportamiento de los sistemas descritos por estas ecuaciones.
+
+
+
 \newpage
 
 \section{Referencias bibliográficas}
